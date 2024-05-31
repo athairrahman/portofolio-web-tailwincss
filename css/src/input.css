@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "Nunito", sans-serif;
+}
+
+.nav-fixed {
+  @apply fixed z-[9999] bg-white opacity-80 backdrop-blur-sm;
+  @apply shadow-[inset_0_-1px_0_0_rgba(0,0,0,0.1)];
+}
+
+.hamburger-active > span:nth-child(1) {
+  @apply rotate-45;
+}
+.hamburger-active > span:nth-child(2) {
+  @apply scale-0;
+}
+.hamburger-active > span:nth-child(3) {
+  @apply -rotate-45;
+}
+
+@layer components {
+  .icon {
+    @apply flex items-center justify-center border rounded-full w-9 h-9 border-slate-300 hover:bg-primary hover:border-primary hover:text-white;
+  }
+  .hamburger-line {
+    @apply w-[30px] h-[2px] my-2 block bg-dark;
+  }
+}
