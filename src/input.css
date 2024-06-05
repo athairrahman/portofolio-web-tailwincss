@@ -1,14 +1,20 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss/base";
+
+@import "tailwindcss/components";
+
+@import "tailwindcss/utilities";
 
 body {
   font-family: "Nunito", sans-serif;
 }
 
 .nav-fixed {
-  @apply fixed z-[9999] bg-white opacity-80 backdrop-blur-sm;
+  @apply fixed z-[9999] bg-white opacity-80 backdrop-blur-sm dark:bg-dark dark:opacity-50;
   @apply shadow-[inset_0_-1px_0_0_rgba(0,0,0,0.1)];
+}
+
+#dark-toggle:checked ~ label div.toggle-circle {
+  @apply translate-x-3;
 }
 
 .hamburger-active > span:nth-child(1) {
@@ -26,6 +32,6 @@ body {
     @apply flex items-center justify-center border rounded-full w-9 h-9 border-slate-300 hover:bg-primary hover:border-primary hover:text-white;
   }
   .hamburger-line {
-    @apply w-[30px] h-[2px] my-2 block bg-dark;
+    @apply w-[30px] h-[2px] my-2 block bg-dark dark:bg-white;
   }
 }
